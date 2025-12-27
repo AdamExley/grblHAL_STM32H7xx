@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
