@@ -481,7 +481,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM1_IDX
 
-ISR_CODE void TIM1_UP_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM1_UP_IRQHandler (void)
 {
     _irq_handler(TIM1, &timers[TIM1_IDX].cfg);
 }
@@ -497,7 +497,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM2_IDX
 
-ISR_CODE void TIM2_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM2_IRQHandler (void)
 {
     _irq_handler(TIM2, &timers[TIM2_IDX].cfg);
 }
@@ -513,7 +513,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM3_IDX
 
-ISR_CODE void TIM3_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM3_IRQHandler (void)
 {
     _irq_handler(TIM3, &timers[TIM3_IDX].cfg);
 }
@@ -529,7 +529,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM4_IDX
 
-ISR_CODE void TIM4_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM4_IRQHandler (void)
 {
     _irq_handler(TIM4, &timers[TIM4_IDX].cfg);
 }
@@ -545,7 +545,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM5_IDX
 
-ISR_CODE void TIM5_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM5_IRQHandler (void)
 {
     _irq_handler(TIM5, &timers[TIM5_IDX].cfg);
 }
@@ -561,7 +561,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM6_IDX
 
-ISR_CODE void TIM6_DAC_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM6_DAC_IRQHandler (void)
 {
     _irq_handler(TIM6, &timers[TIM6_IDX].cfg);
 }
@@ -577,7 +577,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM7_IDX
 
-ISR_CODE void TIM7_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM7_IRQHandler (void)
 {
     _irq_handler(TIM7, &timers[TIM7_IDX].cfg);
 }
@@ -593,7 +593,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM8_IDX
 
-ISR_CODE void TIM8_UP_TIM13_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM8_UP_TIM13_IRQHandler (void)
 {
     _irq_handler(TIM8, &timers[TIM8_IDX].cfg);
 }
@@ -625,7 +625,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM10_IDX
 
-ISR_CODE void TIM10_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM10_IRQHandler (void)
 {
     _irq_handler(TIM10, &timers[TIM10_IDX].cfg);
 }
@@ -641,7 +641,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM11_IDX
 
-ISR_CODE void TIM11_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM11_IRQHandler (void)
 {
     _irq_handler(TIM11, &timers[TIM11_IDX].cfg);
 }
@@ -657,7 +657,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM12_IDX
 
-ISR_CODE void TIM12_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM12_IRQHandler (void)
 {
     _irq_handler(TIM12, &timers[TIM12_IDX].cfg);
 }
@@ -673,7 +673,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM13_IDX
 
-ISR_CODE void TIM13_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM13_IRQHandler (void)
 {
     _irq_handler(TIM13, &timers[TIM13_IDX].cfg);
 }
@@ -689,7 +689,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM14_IDX
 
-ISR_CODE void TIM14_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM14_IRQHandler (void)
 {
     _irq_handler(TIM14, &timers[TIM14_IDX].cfg);
 }
@@ -705,7 +705,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM15_IDX
 
-ISR_CODE void TIM15_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM15_IRQHandler (void)
 {
     _irq_handler(TIM15, &timers[TIM15_IDX].cfg);
 }
@@ -721,7 +721,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM16_IDX
 
-ISR_CODE void TIM16_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM16_IRQHandler (void)
 {
     _irq_handler(TIM16, &timers[TIM16_IDX].cfg);
 }
@@ -737,7 +737,7 @@ enum {
 #undef LAST_TIDX
 #define LAST_TIDX TIM17_IDX
 
-ISR_CODE void TIM17_IRQHandler (void)
+__attribute__((section(".itcmram"))) void TIM17_IRQHandler (void)
 {
     _irq_handler(TIM17, &timers[TIM17_IDX].cfg);
 }

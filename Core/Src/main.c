@@ -25,7 +25,7 @@
 #include "main.h"
 #include "driver.h"
 
-#include "grbl/grbllib.h"
+#include "grbllib.h"
 
 void SystemClock_Config(void);
 void MPU_Config(void);
@@ -388,6 +388,12 @@ void Error_Handler(void)
   while (1);
 }
 
+
+void ExitRun0Mode(void)
+{
+    
+}
+
 #ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
@@ -398,7 +404,7 @@ void Error_Handler(void)
   */
 
 #include <stdio.h>
-#include "grbl/hal.h"
+#include "hal.h"
 
 void assert_failed(uint8_t *file, uint32_t line)
 {

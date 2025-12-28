@@ -26,7 +26,7 @@
 
 #if TRINAMIC_UART_ENABLE
 
-#include "trinamic/common.h"
+#include "common.h"
 
 #define TMC_UART_TIMER          timer(TMC_UART_TIMER_N)
 #define TMC_UART_IRQn           timerINT(TMC_UART_TIMER_N)

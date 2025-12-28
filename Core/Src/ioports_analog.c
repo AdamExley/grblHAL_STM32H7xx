@@ -37,7 +37,7 @@
 
 #define AUX_ANALOG_OUT (PWM_OUT0 + PWM_OUT1)
 
-#include "grbl/ioports.h"
+#include "ioports.h"
 
 typedef struct {
     GPIO_TypeDef *port;

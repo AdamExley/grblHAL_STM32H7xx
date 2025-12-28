@@ -29,7 +29,7 @@
 
 #if TRINAMIC_SPI_ENABLE
 
-#include "trinamic/common.h"
+#include "common.h"
 
 static struct {
     GPIO_TypeDef *port;

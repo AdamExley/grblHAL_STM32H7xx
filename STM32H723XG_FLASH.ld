@@ -55,13 +55,18 @@ ENTRY(Reset_Handler)
 /* Specify the memory areas */
 MEMORY
 {
-DTCMRAM (xrw)      : ORIGIN = 0x20000000, LENGTH = 128K
-RAM_D1 (xrw)      : ORIGIN = 0x24000000, LENGTH = 320K
-RAM_D2 (xrw)      : ORIGIN = 0x30000000, LENGTH = 32K
-RAM_D3 (xrw)      : ORIGIN = 0x38000000, LENGTH = 16K
-ITCMRAM (xrw)      : ORIGIN = 0x00000000, LENGTH = 64K
-FLASH (rx)      : ORIGIN = 0x8000000, LENGTH = 1024K
+  FLASH (rx)        : ORIGIN = 0x08000000, LENGTH = 1024K - 128K
+  EEPROM_EMUL (xrw) : ORIGIN = 0x080E0000, LENGTH = 128K
+  DTCMRAM (xrw)     : ORIGIN = 0x20000000, LENGTH = 128K
+  RAM_D1_DMA (xrw)  : ORIGIN = 0x24000000, LENGTH = 64K
+  RAM_D1 (xrw)      : ORIGIN = 0x24010000, LENGTH = 320K - LENGTH(RAM_D1_DMA)
+  RAM_D2 (xrw)      : ORIGIN = 0x30000000, LENGTH = 32K
+  RAM_D3 (xrw)      : ORIGIN = 0x38000000, LENGTH = 16K
+  ITCMRAM (xrw)     : ORIGIN = 0x00000000, LENGTH = 64K
 }
+
+_EEPROM_Emul_Start = ORIGIN(EEPROM_EMUL);
+
 
 /* Highest address of the user mode stack */
 _estack = ORIGIN(DTCMRAM) + LENGTH(DTCMRAM);    /* end of RAM */

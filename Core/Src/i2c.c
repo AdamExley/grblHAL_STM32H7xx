@@ -22,7 +22,7 @@
 #include <main.h>
 
 #include "i2c.h"
-#include "grbl/hal.h"
+#include "hal.h"
 
 #ifdef I2C_PORT
 

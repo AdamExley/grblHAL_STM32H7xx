@@ -22,12 +22,12 @@
 #pragma once
 
 #include "driver.h"
-#include "grbl/plugins.h"
+#include "plugins.h"
 
 #if TRINAMIC_ENABLE == 2130 && TRINAMIC_I2C
 
 #include "motors/trinamic.h"
-#include "trinamic/tmc_i2c_interface.h"
+#include "tmc_i2c_interface.h"
 
 #define I2C_ADR_I2CBRIDGE 0x47
 

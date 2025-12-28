@@ -27,9 +27,9 @@
 
 #include "pwm.h"
 
-#include "grbl/pin_bits_masks.h"
-#include "grbl/nvs_buffer.h"
-#include "grbl/task.h"
+#include "pin_bits_masks.h"
+#include "nvs_buffer.h"
+#include "task.h"
 
 static settings_changed_ptr settings_changed;
 

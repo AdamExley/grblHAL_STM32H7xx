@@ -33,12 +33,42 @@ set(MX_Application_Src
     ${CMAKE_CURRENT_SOURCE_DIR}/../../USB_DEVICE/App/usbd_cdc_if.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../FATFS/App/fatfs.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../FATFS/Target/user_diskio.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/main.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/stm32h7xx_it.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/stm32h7xx_hal_msp.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/sysmem.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/syscalls.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../startup_stm32h723xx.s
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/cache.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/can.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/debug.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/driver.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/driver_spindles.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/flash.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/i2c.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/ioports_analog.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/ioports.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/littlefs_hal.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/main.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/neopixel_spi.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/pwm.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/sdmmc.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/serial.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/spi.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/spiflash.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/stm32h7xx_it.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/stm32h7xx_hal_msp.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/sysmem.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/syscalls.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../startup_stm32h723xx.s
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/system_stm32h7xx.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/tcp_echoserver.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/timers.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/tmc_spi.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/tmc_uart.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/usb_serial.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Core/Src/w5x00_ll_driver.c
+
 )
 
 # STM32 HAL/LL Drivers
@@ -65,6 +95,8 @@ set(STM32_Drivers_Src
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c
 )
 
 # Drivers Midllewares
@@ -77,10 +109,10 @@ set(USB_Device_Library_Src
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c
 )
 set(FatFs_Src
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FatFs/src/diskio.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FatFs/src/sd_diskio.c
     ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FatFs/src/ff.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FatFs/src/option/syscall.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FatFs/src/ff_gen_drv.c
+    # ${CMAKE_CURRENT_SOURCE_DIR}/../../Middlewares/Third_Party/FatFs/src/option/syscall.c
 )
 
 # Link directories setup

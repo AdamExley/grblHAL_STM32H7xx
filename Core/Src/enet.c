@@ -38,9 +38,9 @@
 #include "tcp_echoserver.h"
 #endif
 
-#include "grbl/report.h"
-#include "grbl/task.h"
-#include "grbl/nvs_buffer.h"
+#include "report.h"
+#include "task.h"
+#include "nvs_buffer.h"
 
 #include "networking/networking.h"
 

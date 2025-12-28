@@ -25,8 +25,8 @@
 #include "main.h"
 #include "driver.h"
 
-#include "grbl/hal.h"
-#include "grbl/protocol.h"
+#include "hal.h"
+#include "protocol.h"
 
 #ifdef SERIAL_PORT
 static stream_rx_buffer_t rxbuf = {0};
@@ -763,7 +763,7 @@ static const io_stream_t *serialInit (uint32_t baud_rate)
     return &stream;
 }
 
-ISR_CODE void UART0_IRQHandler (void)
+__attribute__((section(".itcmram"))) void UART0_IRQHandler (void)
 {
     if(UART0->ISR & USART_ISR_RXNE_RXFNE) {
         uint32_t data = UART0->RDR;
@@ -1021,7 +1021,7 @@ static const io_stream_t *serial1Init (uint32_t baud_rate)
     return &stream;
 }
 
-ISR_CODE void UART1_IRQHandler (void)
+__attribute__((section(".itcmram"))) void UART1_IRQHandler (void)
 {
     if(UART1->ISR & USART_ISR_RXNE_RXFNE) {
         uint32_t data = UART1->RDR;
@@ -1279,7 +1279,7 @@ static const io_stream_t *serial2Init (uint32_t baud_rate)
     return &stream;
 }
 
-ISR_CODE void UART2_IRQHandler (void)
+__attribute__((section(".itcmram"))) void UART2_IRQHandler (void)
 {
     if(UART2->ISR & USART_ISR_RXNE_RXFNE) {
         uint32_t data = UART2->RDR;

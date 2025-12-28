@@ -31,11 +31,11 @@
 #include "driver.h"
 #include "serial.h"
 
-#include "grbl/task.h"
-#include "grbl/motor_pins.h"
-#include "grbl/pin_bits_masks.h"
-#include "grbl/state_machine.h"
-#include "grbl/machine_limits.h"
+#include "task.h"
+#include "motor_pins.h"
+#include "pin_bits_masks.h"
+#include "state_machine.h"
+#include "machine_limits.h"
 
 #if I2C_ENABLE
 #include "i2c.h"
@@ -83,7 +83,7 @@
 
 #if SPINDLE_ENCODER_ENABLE
 
-#include "grbl/spindle_sync.h"
+#include "spindle_sync.h"
 
 #define RPM_TIMER_RESOLUTION 1
 
@@ -482,7 +482,7 @@ static bool irq_claim (irq_type_t irq, uint_fast8_t id, irq_callback_ptr handler
 
 #endif // defined(I2C_STROBE_PIN) || SPI_IRQ_BIT
 
-#include "grbl/stepdir_map.h"
+#include "stepdir_map.h"
 
 #ifdef SQUARING_ENABLED
 static axes_signals_t motors_1 = {AXES_BITMASK}, motors_2 = {AXES_BITMASK};
@@ -556,7 +556,7 @@ static void stepperWakeUp (void)
 }
 
 // Sets up stepper driver interrupt timeout, "Normal" version
-ISR_CODE static void stepperCyclesPerTick (uint32_t cycles_per_tick)
+__attribute__((section(".itcmram"))) static void stepperCyclesPerTick (uint32_t cycles_per_tick)
 {
     STEPPER_TIMER->ARR = cycles_per_tick < (1UL << 20) ? max(cycles_per_tick, step_pulse.t_min_period) : 0x000FFFFFUL;
 }
@@ -1021,7 +1021,7 @@ static inline __attribute__((always_inline)) void _stepper_step_out (axes_signal
 }
 
 // Sets stepper direction and pulse pins and starts a step pulse.
-ISR_CODE static void stepperPulseStart (stepper_t *stepper)
+__attribute__((section(".itcmram"))) static void stepperPulseStart (stepper_t *stepper)
 {
     if(stepper->dir_changed.bits) {
         stepper->dir_changed.bits = 0;
@@ -1034,7 +1034,7 @@ ISR_CODE static void stepperPulseStart (stepper_t *stepper)
 
 // Start a stepper pulse, delay version.
 // Note: delay is only added when there is a direction change and a pulse to be output.
-ISR_CODE static void stepperPulseStartDelayed (stepper_t *stepper)
+__attribute__((section(".itcmram"))) static void stepperPulseStartDelayed (stepper_t *stepper)
 {
     if(stepper->dir_changed.bits) {
 
@@ -2447,7 +2447,7 @@ static void onReportOptions (bool newopt)
 
 #if ESP_AT_ENABLE
 
-#include "grbl/stream_passthru.h"
+#include "stream_passthru.h"
 
 void stream_passthru_enter (void)
 {
@@ -2769,7 +2769,7 @@ bool driver_init (void)
 
 #if USB_SERIAL_CDC && ESP_AT_ENABLE
 
-    #include "grbl/stream_passthru.h"
+    #include "stream_passthru.h"
 
     bool enterpt;
 
@@ -2786,7 +2786,7 @@ bool driver_init (void)
 
 #endif
 
-#include "grbl/plugins_init.h"
+#include "plugins_init.h"
 
 #if MPG_ENABLE == 1
     if(!hal.driver_cap.mpg_mode)
@@ -2806,7 +2806,7 @@ bool driver_init (void)
 /* interrupt handlers */
 
 // Main stepper driver
-ISR_CODE void STEPPER_TIMER_IRQHandler (void)
+__attribute__((section(".itcmram"))) void STEPPER_TIMER_IRQHandler (void)
 {
 //    DIGITAL_OUT(AUXOUTPUT0_PORT, 1<<AUXOUTPUT0_PIN, 1);
 
@@ -2842,7 +2842,7 @@ ISR_CODE void STEPPER_TIMER_IRQHandler (void)
 
 #if SPINDLE_ENCODER_ENABLE
 
-ISR_CODE void RPM_COUNTER_IRQHandler (void)
+__attribute__((section(".itcmram"))) void RPM_COUNTER_IRQHandler (void)
 {
     spindle_encoder.spin_lock = true;
 
@@ -2864,7 +2864,7 @@ ISR_CODE void RPM_COUNTER_IRQHandler (void)
 
 #if RPM_TIMER_N != 2
 
-ISR_CODE void RPM_TIMER_IRQHandler (void)
+__attribute__((section(".itcmram"))) void RPM_TIMER_IRQHandler (void)
 {
     RPM_TIMER->SR &= ~TIM_SR_UIF;
 
@@ -3174,7 +3174,7 @@ void EXTI15_10_IRQHandler(void)
 #endif
 
 // Interrupt handler for 1 ms interval timer
-ISR_CODE void Driver_IncTick (void)
+__attribute__((section(".itcmram"))) void Driver_IncTick (void)
 {
     if(delay.ms && !(--delay.ms)) {
         if(delay.callback) {

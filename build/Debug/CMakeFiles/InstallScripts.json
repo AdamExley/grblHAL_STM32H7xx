@@ -2,7 +2,20 @@
 	"InstallScripts" : 
 	[
 		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/cmake_install.cmake",
-		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/cmake/stm32cubemx/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/eeprom/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/fans/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/grbl/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/keypad/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/laser/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/trinamic/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/motors/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/openpnp/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/plasma/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/plugins/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/sdcard/cmake_install.cmake",
+		"Z:/Lathe/Firmware/STM32H7xx-CMakeMod/build/Debug/grbl_source/spindle/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

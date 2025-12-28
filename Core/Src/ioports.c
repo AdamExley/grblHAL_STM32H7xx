@@ -26,7 +26,7 @@
 #include <stdlib.h>
 
 #include "main.h"
-#include "grbl/protocol.h"
+#include "protocol.h"
 
 static io_ports_data_t digital;
 static input_signal_t *aux_in;

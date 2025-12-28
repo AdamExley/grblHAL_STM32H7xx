@@ -29,8 +29,8 @@
 
 #define CAN_MAX_FILTERS 32
 
-#include "grbl/task.h"
-#include "grbl/canbus.h"
+#include "task.h"
+#include "canbus.h"
 
 static FDCAN_HandleTypeDef hfdcan1 = {
     .Instance = FDCAN1,

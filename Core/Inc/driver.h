@@ -44,7 +44,8 @@
 
 #define OPTS_POSTPROCESSING
 
-#include "grbl/driver_opts.h"
+#include "driver_opts.h"
+// #include "driver_opts.h"
 
 #include "timers.h"
 
@@ -128,7 +129,7 @@
 #elif defined(BOARD_DRESCO_OCTAVE)
   #include "boards/dresco_octave_map.h"
 #elif defined(BOARD_BTT_SKR_30)
-  #include "boards/btt_skr_v3.0_map.h"
+  #include "btt_skr_v3.0_map.h"
 #elif defined(BOARD_BTT_OCTOPUS_MAX)
   #include "boards/btt_octopus_max_map.h"
 #elif defined(BOARD_BTT_OCTOPUS_PRO)
@@ -253,7 +254,7 @@
 #define SDCARD_SDIO 1
 #endif
 
-#include "grbl/driver_opts2.h"
+#include "driver_opts2.h"
 
 #ifndef I2C_PORT
 #define I2C_PORT 2 // GPIOB, SCL_PIN = 10, SDA_PIN = 11
